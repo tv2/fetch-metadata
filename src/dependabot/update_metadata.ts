@@ -129,7 +129,7 @@ export async function parse (commitMessage: string, body: string, branchName: st
  * **NOTE**: This data is only available if more than one dependency is updated in a single PR.
  *
  * @param commitMessage - The commit message containing metadata links.
- * @returns A map from the name of the dependency to an updatedDependency object containing the old and new versions.
+ * @returns A map from each dependency name to an array of version pairs containing the old and new versions for that dependency.
  */
 function parseMetadataLinks(commitMessage: string): Map<string, dependencyVersions[]> {
   const updates: Map<string, dependencyVersions[]> = new Map()
